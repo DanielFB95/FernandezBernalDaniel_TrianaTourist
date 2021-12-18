@@ -20,13 +20,15 @@ public class CategoryService extends BaseService<Category,Long, CategoryReposito
     }
 
     public List<Category> findAll(){
-
+        /*
         List<Category> listaCategorias = categoryRepository.findAll();
         if(listaCategorias.isEmpty()){
             return //Excepcion;
         }else{
             return categoryRepository.findAll();
         }
+        */
+        return categoryRepository.findAll();
     }
 
     public Category save(Category category){

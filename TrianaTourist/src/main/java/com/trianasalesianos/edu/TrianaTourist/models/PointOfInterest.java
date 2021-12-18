@@ -24,5 +24,6 @@ public class PointOfInterest implements Serializable {
     private String photo3;
 
     @ManyToOne
+    @JoinColumn(name = "categoria", foreignKey = @ForeignKey(name = "FK_POI_CATEGORIA"))
     private Category categoria;
 }

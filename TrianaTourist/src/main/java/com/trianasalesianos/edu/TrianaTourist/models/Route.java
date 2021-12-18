@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter
@@ -16,6 +17,7 @@ public class Route implements Serializable {
     private Long id;
     private String name;
 
-    @ManyToOne
-    private List<PointOfInterest> puntosInteres;
+
+    @OneToMany(cascade = {CascadeType.REMOVE})
+    private List<PointOfInterest> pointsOfInterestList;
 }

@@ -4,10 +4,11 @@ import com.trianasalesianos.edu.TrianaTourist.models.Category;
 import lombok.*;
 
 import java.time.LocalDateTime;
+
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Builder
-public class PointOfInteresDto {
+public class PointOfInterestDto {
 
     private String name;
     private String location;

@@ -1,14 +1,14 @@
 package com.trianasalesianos.edu.TrianaTourist.models.dto.converter;
 
 import com.trianasalesianos.edu.TrianaTourist.models.PointOfInterest;
-import com.trianasalesianos.edu.TrianaTourist.models.dto.PointOfInteresDto;
+import com.trianasalesianos.edu.TrianaTourist.models.dto.PointOfInterestDto;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.create.CreatePointOfInterestDto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PointOfInterestConverter {
+public class PointOfInterestDtoConverter {
 
-    private PointOfInterest CreatePointOfInterestDtoToPointOfInterest(CreatePointOfInterestDto createPointOfInterestDto){
+    public PointOfInterest createPointOfInterestDtoToPointOfInterest(CreatePointOfInterestDto createPointOfInterestDto){
 
         return PointOfInterest.builder()
                 .name(createPointOfInterestDto.getName())
@@ -22,9 +22,9 @@ public class PointOfInterestConverter {
                 .build();
     }
 
-    private PointOfInteresDto PointOfInterestToPointOfInterestDto (PointOfInterest pointOfInterest){
+    public PointOfInterestDto pointOfInterestToPointOfInterestDto (PointOfInterest pointOfInterest){
 
-        return PointOfInteresDto.builder()
+        return PointOfInterestDto.builder()
                 .name(pointOfInterest.getName())
                 .location(pointOfInterest.getLocation())
                 .description(pointOfInterest.getDescription())
