@@ -1,6 +1,5 @@
 package com.trianasalesianos.edu.TrianaTourist.services;
 
-import com.trianasalesianos.edu.TrianaTourist.errors.exceptions.EntityNotFoundException;
 import com.trianasalesianos.edu.TrianaTourist.errors.exceptions.ListEntityNotFoundException;
 import com.trianasalesianos.edu.TrianaTourist.errors.exceptions.SingleEntityNotFoundException;
 import com.trianasalesianos.edu.TrianaTourist.models.Category;

@@ -26,4 +26,12 @@ public class PointOfInterest implements Serializable {
     @ManyToOne
     @JoinColumn(name = "categoria", foreignKey = @ForeignKey(name = "FK_POI_CATEGORIA"))
     private Category categoria;
+
+    public void addCategoria(Category c){
+        categoria = c;
+    }
+
+    public void removeCategoria(Category c){
+        categoria = null;
+    }
 }

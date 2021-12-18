@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "57f85756-28e4-4015-805b-7a16cde0c404",
+		"name": "TrianaTourist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Errores",
+					"item": [
+						{
+							"name": "Error al obtener una categoria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/categoria/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"categoria",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error al editar una categoria",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"categoria EDITADA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/category/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"category",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error al borrar una categoria",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/category/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"category",
+										"100"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Obtener una categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear una categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"categoria 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar una categoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"categoria EDITADA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar una categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Point of interest",
+			"item": [
+				{
+					"name": "Errores",
+					"item": [
+						{
+							"name": "Error al obtener un punto de interés",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/pointOfInterest/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"pointOfInterest",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error al editar un punto de interés",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"EDITADO punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 5\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/pointOfInterest/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"pointOfInterest",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error al borrar un punto de interés",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/pointOfInterest/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"pointOfInterest",
+										"100"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Obtener un punto de interés",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/pointOfInterest/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"pointOfInterest",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los puntos de interés",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/pointOfInterest/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"pointOfInterest",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un punto de interés",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nuevo punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/pointOfInterest/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"pointOfInterest",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar un punto de interés",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"EDITADO punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 5\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/pointOfInterest/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"pointOfInterest",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar un punto de interés",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/pointOfInterest/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"pointOfInterest",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

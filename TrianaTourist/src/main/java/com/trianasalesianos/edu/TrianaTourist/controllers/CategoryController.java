@@ -4,6 +4,8 @@ import com.trianasalesianos.edu.TrianaTourist.models.dto.CategoryDto;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.converter.CategoryDtoConverter;
 import com.trianasalesianos.edu.TrianaTourist.services.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,8 +30,9 @@ public class CategoryController {
     }
 
     @PostMapping("/")
-    public CategoryDto crearCategoria(@RequestBody CategoryDto categoryDto){
-        return categoryDtoConverter.categoryToCategoryDto(categoryService.save(categoryDto));
+    public ResponseEntity<CategoryDto> crearCategoria(@RequestBody CategoryDto categoryDto){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(categoryDtoConverter.categoryToCategoryDto(categoryService.save(categoryDto)));
     }
 
     @PutMapping("/{id}")
@@ -38,8 +41,9 @@ public class CategoryController {
     }
 
     @DeleteMapping("/{id}")
-    public void borrarCategoria(@PathVariable Long id){
+    public ResponseEntity<?> borrarCategoria(@PathVariable Long id){
         categoryService.delete(categoryService.findOne(id));
+        return ResponseEntity.noContent().build();
     }
 
 }

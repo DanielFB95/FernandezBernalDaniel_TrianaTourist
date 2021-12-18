@@ -3,10 +3,14 @@ package com.trianasalesianos.edu.TrianaTourist.models.dto.converter;
 import com.trianasalesianos.edu.TrianaTourist.models.PointOfInterest;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.PointOfInterestDto;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.create.CreatePointOfInterestDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class PointOfInterestDtoConverter {
+
+    private final CategoryDtoConverter categoryDtoConverter;
 
     public PointOfInterest createPointOfInterestDtoToPointOfInterest(CreatePointOfInterestDto createPointOfInterestDto){
 
@@ -29,7 +33,7 @@ public class PointOfInterestDtoConverter {
                 .location(pointOfInterest.getLocation())
                 .description(pointOfInterest.getDescription())
                 .fechaApertura(pointOfInterest.getFechaApertura())
-                .categoria(pointOfInterest.getCategoria())
+                .categoria(categoryDtoConverter.categoryToCategoryDto(pointOfInterest.getCategoria()))
                 .coverPhoto(pointOfInterest.getCoverPhoto())
                 .photo2(pointOfInterest.getPhoto2())
                 .photo3(pointOfInterest.getPhoto3())

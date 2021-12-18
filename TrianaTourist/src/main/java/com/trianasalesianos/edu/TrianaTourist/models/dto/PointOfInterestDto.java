@@ -17,5 +17,5 @@ public class PointOfInterestDto {
     private String coverPhoto;
     private String photo2;
     private String photo3;
-    private Category categoria;
+    private CategoryDto categoria;
 }
