@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 @Component
-public class MyDefaultErrorAttributtes extends DefaultErrorAttributes {
+public class MyDefaultErrorAttributes extends DefaultErrorAttributes {
 
     @Override
     public Map<String, Object> getErrorAttributes(WebRequest webRequest, ErrorAttributeOptions options) {
@@ -28,7 +28,7 @@ public class MyDefaultErrorAttributtes extends DefaultErrorAttributes {
             result.put("message", errorAttributes.get("message"));
         }
         if(errorAttributes.containsKey("errors")){
-            result.put("subErrors",errorAttributes.get("subErrors"));
+            result.put("subErrors",errorAttributes.get("errors"));
         }
         return result;
     }
