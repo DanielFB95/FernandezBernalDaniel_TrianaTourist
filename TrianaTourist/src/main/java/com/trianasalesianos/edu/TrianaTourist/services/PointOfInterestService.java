@@ -7,4 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PointOfInterestService extends BaseService<PointOfInterest,Long,PointOfInterestRepository> {
+
+
+
 }

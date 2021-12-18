@@ -19,26 +19,15 @@ public class CategoryService extends BaseService<Category,Long, CategoryReposito
         return categoryRepository.findById(id).orElseThrow();
     }
 
-    public List<Category> findAll(){
-        /*
-        List<Category> listaCategorias = categoryRepository.findAll();
-        if(listaCategorias.isEmpty()){
-            return //Excepcion;
-        }else{
-            return categoryRepository.findAll();
-        }
-        */
-        return categoryRepository.findAll();
-    }
+    public List<Category> findAll(){ return categoryRepository.findAll(); }
 
-    public Category save(Category category){
-        //Excepciones
-        categoryRepository.save(category);
-        return category;
-    }
+    public Category save(Category category){ return  categoryRepository.save(category); }
+
+    public Category edit (Category category){ return save(category); }
 
     public void delete(Category category){
         categoryRepository.delete(category);
     }
 
+    public void deleteById(Category category){categoryRepository.deleteById(category.getId());}
 }
