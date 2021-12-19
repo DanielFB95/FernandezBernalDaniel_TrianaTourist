@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class PointOfInterest implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String location;

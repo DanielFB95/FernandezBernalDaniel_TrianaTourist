@@ -13,11 +13,15 @@ import java.util.List;
 @Entity
 public class Route implements Serializable {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
 
     @OneToMany(cascade = {CascadeType.REMOVE})
     private List<PointOfInterest> pointsOfInterestList;
+
+    public Route(String name) {
+        this.name = name;
+    }
 }

@@ -326,7 +326,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"nuevo punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"nuevo punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 4\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -392,6 +392,173 @@
 							"path": [
 								"pointOfInterest",
 								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Route",
+			"item": [
+				{
+					"name": "Obtener una ruta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/route/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las rutas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/route/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar una ruta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nueva ruta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/route/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar una ruta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ruta EDITADA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/route/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar una ruta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/route/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar un punto de interes a la ruta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/route/1/agregarPuntoInteres/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								"1",
+								"agregarPuntoInteres",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un punto de interés de una ruta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/route/1/borrarPuntoInteres/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"route",
+								"1",
+								"borrarPuntoInteres",
+								"1"
 							]
 						}
 					},

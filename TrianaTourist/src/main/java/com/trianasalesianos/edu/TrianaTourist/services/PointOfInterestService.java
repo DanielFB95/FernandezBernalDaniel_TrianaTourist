@@ -46,8 +46,6 @@ public class PointOfInterestService extends BaseService<PointOfInterest,Long,Poi
 
     public PointOfInterest edit(Long id, CreatePointOfInterestDto pointOfInterestDto){
 
-        List<Category> listaCategorias = categoryService.findAll();
-
         PointOfInterest pointOfInterestEdit = findOne(id);
         pointOfInterestEdit.setName(pointOfInterestDto.getName());
         pointOfInterestEdit.setLocation(pointOfInterestDto.getLocation());
