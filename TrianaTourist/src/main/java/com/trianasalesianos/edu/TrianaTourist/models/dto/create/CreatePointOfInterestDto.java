@@ -1,6 +1,7 @@
 package com.trianasalesianos.edu.TrianaTourist.models.dto.create;
 
 import com.trianasalesianos.edu.TrianaTourist.models.Category;
+import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.PhotosUnique;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Builder
+@PhotosUnique(coverPhoto = "coverPhoto",photo2 = "photo2",photo3 = "photo3")
 public class CreatePointOfInterestDto {
 
     private String name;

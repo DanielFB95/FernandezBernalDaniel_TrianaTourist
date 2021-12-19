@@ -22,4 +22,5 @@ public class BaseService<T,ID,R extends JpaRepository<T,ID>> {
     public void delete (T t) { repository.delete(t);}
 
     public void deleteById (ID id) { repository.deleteById(id);}
+
 }
