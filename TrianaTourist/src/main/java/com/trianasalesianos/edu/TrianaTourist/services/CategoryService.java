@@ -5,6 +5,7 @@ import com.trianasalesianos.edu.TrianaTourist.errors.exceptions.SingleEntityNotF
 import com.trianasalesianos.edu.TrianaTourist.models.Category;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.CategoryDto;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.converter.CategoryDtoConverter;
+import com.trianasalesianos.edu.TrianaTourist.models.dto.create.CreateCategoryDto;
 import com.trianasalesianos.edu.TrianaTourist.repositories.CategoryRepository;
 import com.trianasalesianos.edu.TrianaTourist.services.base.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -34,12 +35,12 @@ public class CategoryService extends BaseService<Category,Long, CategoryReposito
         }
      }
 
-    public Category save(CategoryDto category){
+    public Category save(CreateCategoryDto category){
 
-        return categoryRepository.save(categoryDtoConverter.categoryDtoToCategory(category));
+        return categoryRepository.save(categoryDtoConverter.createCategoryDtoToCategory(category));
     }
 
-    public Category edit (Long id,CategoryDto category){
+    public Category edit (Long id,CreateCategoryDto category){
         Category categoriaEditada = findOne(id);
         categoriaEditada.setName(category.getName());
         return save(categoriaEditada);

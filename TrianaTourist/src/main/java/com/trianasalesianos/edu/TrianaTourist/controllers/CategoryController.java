@@ -2,6 +2,7 @@ package com.trianasalesianos.edu.TrianaTourist.controllers;
 
 import com.trianasalesianos.edu.TrianaTourist.models.dto.CategoryDto;
 import com.trianasalesianos.edu.TrianaTourist.models.dto.converter.CategoryDtoConverter;
+import com.trianasalesianos.edu.TrianaTourist.models.dto.create.CreateCategoryDto;
 import com.trianasalesianos.edu.TrianaTourist.services.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -30,13 +31,13 @@ public class CategoryController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<CategoryDto> crearCategoria(@RequestBody CategoryDto categoryDto){
+    public ResponseEntity<CategoryDto> crearCategoria(@RequestBody CreateCategoryDto categoryDto){
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(categoryDtoConverter.categoryToCategoryDto(categoryService.save(categoryDto)));
     }
 
     @PutMapping("/{id}")
-    public CategoryDto editarCategoria(@PathVariable Long id, @RequestBody CategoryDto categoryDto){
+    public CategoryDto editarCategoria(@PathVariable Long id, @RequestBody CreateCategoryDto categoryDto){
         return categoryDtoConverter.categoryToCategoryDto(categoryService.edit(id,categoryDto));
     }
 
