@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,13 +32,13 @@ public class CategoryController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<CategoryDto> crearCategoria(@RequestBody CreateCategoryDto categoryDto){
+    public ResponseEntity<CategoryDto> crearCategoria(@Valid @RequestBody CreateCategoryDto categoryDto){
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(categoryDtoConverter.categoryToCategoryDto(categoryService.save(categoryDto)));
     }
 
     @PutMapping("/{id}")
-    public CategoryDto editarCategoria(@PathVariable Long id, @RequestBody CreateCategoryDto categoryDto){
+    public CategoryDto editarCategoria(@Valid @PathVariable Long id, @RequestBody CreateCategoryDto categoryDto){
         return categoryDtoConverter.categoryToCategoryDto(categoryService.edit(id,categoryDto));
     }
 

@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,14 +34,14 @@ public class PointOfInterestController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<PointOfInterestDto> crearPuntoDeInteres(@RequestBody CreatePointOfInterestDto createPointOfInterestDto){
+    public ResponseEntity<PointOfInterestDto> crearPuntoDeInteres(@Valid @RequestBody CreatePointOfInterestDto createPointOfInterestDto){
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(pointOfInterestDtoConverter
                         .pointOfInterestToPointOfInterestDto(pointOfInterestService.save(createPointOfInterestDto)));
     }
 
     @PutMapping("/{id}")
-    public PointOfInterestDto editarPuntoDeInteres(@PathVariable Long id, @RequestBody CreatePointOfInterestDto pointOfInterestDto){
+    public PointOfInterestDto editarPuntoDeInteres(@Valid @PathVariable Long id, @RequestBody CreatePointOfInterestDto pointOfInterestDto){
         return pointOfInterestDtoConverter.pointOfInterestToPointOfInterestDto(pointOfInterestService.edit(id,pointOfInterestDto));
     }
 

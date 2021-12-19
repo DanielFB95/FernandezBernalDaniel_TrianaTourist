@@ -1,5 +1,6 @@
 package com.trianasalesianos.edu.TrianaTourist.models;
 
+import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.PhotosUnique;
 import lombok.*;
 
 import javax.persistence.*;

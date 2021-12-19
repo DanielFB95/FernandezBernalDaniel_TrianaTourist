@@ -1,5 +1,6 @@
 package com.trianasalesianos.edu.TrianaTourist.models.dto;
 
+import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.PhotosUnique;
 import lombok.*;
 
 import java.time.LocalDateTime;

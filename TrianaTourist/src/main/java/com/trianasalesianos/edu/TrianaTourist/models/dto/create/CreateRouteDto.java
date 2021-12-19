@@ -1,5 +1,6 @@
 package com.trianasalesianos.edu.TrianaTourist.models.dto.create;
 
+import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.RouteNameUnique;
 import lombok.*;
 
 @Setter @Getter
@@ -7,6 +8,7 @@ import lombok.*;
 @Builder
 public class CreateRouteDto {
 
+    @RouteNameUnique
     private String name;
 
 }

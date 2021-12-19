@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.RouteMatcher;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,14 +37,14 @@ public class RouteController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<RouteDto> save(@RequestBody CreateRouteDto createRouteDto){
+    public ResponseEntity<RouteDto> save(@Valid @RequestBody CreateRouteDto createRouteDto){
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(routeDtoConverter.routeToRouteDto(routeService.save(createRouteDto)));
     }
 
     @PutMapping("/{id}")
-    public RouteDto edit(@PathVariable Long id, @RequestBody CreateRouteDto createRouteDto){
+    public RouteDto edit(@Valid @PathVariable Long id, @RequestBody CreateRouteDto createRouteDto){
         return routeDtoConverter.routeToRouteDto(routeService.edit(id,createRouteDto));
     }
 
