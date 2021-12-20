@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface PhotosUnique {
 
-    String message() default "//properties";
+    String message() default "{pointOfInterest.photo.unique}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 

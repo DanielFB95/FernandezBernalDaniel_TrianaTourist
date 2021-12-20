@@ -1,18 +1,18 @@
 package com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones;
 
-import com.trianasalesianos.edu.TrianaTourist.validacion.validadores.CategoryNameUniqueValidator;
+import com.trianasalesianos.edu.TrianaTourist.validacion.validadores.NameUniqueValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
-@Constraint(validatedBy = CategoryNameUniqueValidator.class)
+@Constraint(validatedBy = NameUniqueValidator.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD,ElementType.METHOD})
 @Documented
-public @interface CategoryNameUnique {
+public @interface NameUnique {
 
-    String message() default "//properties";
+    String message() default "{name.unique}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

@@ -1,6 +1,6 @@
 package com.trianasalesianos.edu.TrianaTourist.models.dto.create;
 
-import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.CategoryNameUnique;
+import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.NameUnique;
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 public class CreateCategoryDto {
 
     @NotNull
-    @CategoryNameUnique
+    @NameUnique
     private String name;
 
 }

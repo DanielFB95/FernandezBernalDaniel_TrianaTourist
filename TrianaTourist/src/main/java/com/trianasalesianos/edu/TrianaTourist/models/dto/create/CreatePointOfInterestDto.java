@@ -1,6 +1,7 @@
 package com.trianasalesianos.edu.TrianaTourist.models.dto.create;
 
 import com.trianasalesianos.edu.TrianaTourist.models.Category;
+import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.LocationFormat;
 import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.PhotosUnique;
 import lombok.*;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor @AllArgsConstructor
 @Builder
 @PhotosUnique(coverPhoto = "coverPhoto",photo2 = "photo2",photo3 = "photo3")
+@LocationFormat(field = "location")
 public class CreatePointOfInterestDto {
 
     private String name;
