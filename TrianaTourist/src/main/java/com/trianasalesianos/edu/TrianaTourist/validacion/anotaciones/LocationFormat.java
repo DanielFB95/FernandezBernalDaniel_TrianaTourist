@@ -9,7 +9,6 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = LocationFormatValidator.class)
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Documented
 public @interface LocationFormat {
 
     String message() default "{pointOfInteres.location.format}";

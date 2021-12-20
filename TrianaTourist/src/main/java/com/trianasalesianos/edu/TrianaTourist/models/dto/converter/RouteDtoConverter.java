@@ -23,10 +23,16 @@ public class RouteDtoConverter {
 
     public RouteDto routeToRouteDto(Route route){
 
-        return RouteDto.builder()
-                .name(route.getName())
-                .pointsOfInterestList(route.getPointsOfInterestList().stream().map(pointOfInterestDtoConverter::pointOfInterestToPointOfInterestDto).collect(Collectors.toList()))
-                .build();
+        if(route.getPointsOfInterestList() == null){
+            return RouteDto.builder()
+                    .name(route.getName())
+                    .build();
+        }else{
+            return RouteDto.builder()
+                    .name(route.getName())
+                    .pointsOfInterestList(route.getPointsOfInterestList().stream().map(pointOfInterestDtoConverter::pointOfInterestToPointOfInterestDto).collect(Collectors.toList()))
+                    .build();
+        }
     }
 
 

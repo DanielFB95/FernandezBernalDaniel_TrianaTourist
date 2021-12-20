@@ -17,7 +17,13 @@ public class Route implements Serializable {
     private Long id;
     private String name;
 
-    @OneToMany(cascade = {CascadeType.REMOVE})
+    @ManyToMany
+    @JoinTable(joinColumns = @JoinColumn(name="points_interest_id",
+                                    foreignKey = @ForeignKey(name="FK_ROUTE_POINTOFINTEREST_ID")),
+        inverseJoinColumns = @JoinColumn(name="route_id",
+                                    foreignKey = @ForeignKey(name="FK_ROUTE_ROUTE_ID")),
+            name = "asignacionRutas"
+    )
     @UniqueElements
     private List<PointOfInterest> pointsOfInterestList;
 
@@ -25,11 +31,4 @@ public class Route implements Serializable {
         this.name = name;
     }
 
-    public void addPointOfInterest(PointOfInterest pointOfInterest){
-        pointsOfInterestList.add(pointOfInterest);
-    }
-
-    public void removePointOfInterest(PointOfInterest pointOfInterest){
-        pointsOfInterestList.remove(pointOfInterest);
-    }
 }

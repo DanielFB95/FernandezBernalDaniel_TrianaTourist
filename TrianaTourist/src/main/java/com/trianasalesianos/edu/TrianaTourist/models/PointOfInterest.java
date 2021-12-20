@@ -1,5 +1,6 @@
 package com.trianasalesianos.edu.TrianaTourist.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.trianasalesianos.edu.TrianaTourist.validacion.anotaciones.PhotosUnique;
 import lombok.*;
 
@@ -28,11 +29,4 @@ public class PointOfInterest implements Serializable {
     @JoinColumn(name = "categoria", foreignKey = @ForeignKey(name = "FK_POI_CATEGORIA"))
     private Category categoria;
 
-    public void addCategoria(Category c){
-        categoria = c;
-    }
-
-    public void removeCategoria(Category c){
-        categoria = null;
-    }
 }

@@ -17,9 +17,9 @@ public class LocationFormatValidator implements ConstraintValidator<LocationForm
     }
 
     @Override
-    public boolean isValid(Object s, ConstraintValidatorContext constraintValidatorContext) {
-        String fieldValue = (String) PropertyAccessorFactory.forBeanPropertyAccess(s).getPropertyValue(field);
-        String formatoLocalizacion = "^[-+]?([1-8]?\\\\d(\\\\.\\\\d+)?|90(\\\\.0+)?),\\\\s*[-+]?(180(\\\\.0+)?|((1[0-7]\\\\d)|([1-9]?\\\\d))(\\\\.\\\\d+)?)$";
-        return StringUtils.hasText(fieldValue) && fieldValue.matches(formatoLocalizacion);
+    public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
+        String fieldValue = (String) PropertyAccessorFactory.forBeanPropertyAccess(o).getPropertyValue(field);
+        String formatoLocalizacion = "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),\\s*[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$";
+        return fieldValue.matches(formatoLocalizacion);
     }
 }

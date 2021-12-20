@@ -40,8 +40,40 @@ public class PointOfInterestService extends BaseService<PointOfInterest,Long,Poi
     }
 
     public PointOfInterest save(CreatePointOfInterestDto createPointOfInterestDto){
-        return pointOfInterestRepository.save(pointOfInterestDtoConverter
-                .createPointOfInterestDtoToPointOfInterest(createPointOfInterestDto));
+
+        Category categoria = categoryService.findById(Integer.toUnsignedLong(createPointOfInterestDto.getCategoria_id()))
+                .orElse(null);
+
+        if(categoria == null){
+
+            PointOfInterest nuevoPuntoDeInteres = PointOfInterest.builder()
+                    .name(createPointOfInterestDto.getName())
+                    .location(createPointOfInterestDto.getLocation())
+                    .description(createPointOfInterestDto.getDescription())
+                    .fechaApertura(createPointOfInterestDto.getFechaApertura())
+                    .coverPhoto(createPointOfInterestDto.getCoverPhoto())
+                    .photo2(createPointOfInterestDto.getPhoto2())
+                    .photo3(createPointOfInterestDto.getPhoto3())
+                    .build();
+
+            return pointOfInterestRepository.save(nuevoPuntoDeInteres);
+
+        }else{
+
+            PointOfInterest nuevoPuntoDeInteres = PointOfInterest.builder()
+                    .name(createPointOfInterestDto.getName())
+                    .location(createPointOfInterestDto.getLocation())
+                    .description(createPointOfInterestDto.getDescription())
+                    .fechaApertura(createPointOfInterestDto.getFechaApertura())
+                    .coverPhoto(createPointOfInterestDto.getCoverPhoto())
+                    .photo2(createPointOfInterestDto.getPhoto2())
+                    .photo3(createPointOfInterestDto.getPhoto3())
+                    .categoria(categoryService.findOne(Integer.toUnsignedLong(createPointOfInterestDto.getCategoria_id())))
+                    .build();
+
+            return pointOfInterestRepository.save(nuevoPuntoDeInteres);
+        }
+
     }
 
     public PointOfInterest edit(Long id, CreatePointOfInterestDto pointOfInterestDto){
@@ -54,8 +86,7 @@ public class PointOfInterestService extends BaseService<PointOfInterest,Long,Poi
         pointOfInterestEdit.setCoverPhoto(pointOfInterestDto.getCoverPhoto());
         pointOfInterestEdit.setPhoto2(pointOfInterestDto.getPhoto2());
         pointOfInterestEdit.setPhoto3(pointOfInterestDto.getPhoto3());
-        pointOfInterestEdit.setCategoria(pointOfInterestDto.getCategoria());
-        //pointOfInterestEdit.addCategoria(pointOfInterestDto.getCategoria());
+        pointOfInterestEdit.setCategoria(categoryService.findOne(Integer.toUnsignedLong(pointOfInterestDto.getCategoria_id())));
         return save(pointOfInterestEdit);
 
     }

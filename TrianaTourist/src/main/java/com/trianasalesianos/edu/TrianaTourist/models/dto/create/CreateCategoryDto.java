@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class CreateCategoryDto {
 
-    @NotNull
+    @NotNull(message = "{object.notNull} 'name'")
     @NameUnique
     private String name;
 

@@ -62,8 +62,10 @@ public class RouteService extends BaseService<Route,Long, RouteRepository> {
 
         Route ruta = findOne(id);
         PointOfInterest puntoInterés = pointOfInterestService.findOne(id2);
-
-        ruta.addPointOfInterest(puntoInterés);
+        List<PointOfInterest> listaPuntosInteres = ruta.getPointsOfInterestList();
+        listaPuntosInteres.add(puntoInterés);
+        ruta.setPointsOfInterestList(listaPuntosInteres);
+        routeRepository.save(ruta);
         return ruta;
     }
 
@@ -71,9 +73,11 @@ public class RouteService extends BaseService<Route,Long, RouteRepository> {
 
         Route ruta = findOne(id);
         PointOfInterest puntoInterés = pointOfInterestService.findOne(id2);
+        List<PointOfInterest>listaPuntosInteres = ruta.getPointsOfInterestList();
+        listaPuntosInteres.remove(puntoInterés);
+        ruta.setPointsOfInterestList(listaPuntosInteres);
+        routeRepository.save(ruta);
 
-        ruta.removePointOfInterest(
-                puntoInterés);
         return ruta;
     }
 }

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "57f85756-28e4-4015-805b-7a16cde0c404",
+		"_postman_id": "ec5e505b-cf57-4883-ab6e-e9b73b07d5b0",
 		"name": "TrianaTourist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -79,6 +79,64 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Error de validación nombre repetido",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"nueva categoria\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error de validación nombre vacío",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -129,7 +187,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"categoria 1\"\r\n}",
+							"raw": "{\r\n    \"name\": \"nueva categoria\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -276,6 +334,64 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Errores de validación 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"nuevo punto de interés\",\r\n    \"location\": \"asdfgh\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor \",\r\n    \"fechaApertura\": \"20/12/2021 17:09:44\",\r\n    \"coverPhoto\": \"https://www.google1.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca47418\",\r\n    \"photo2\": \"https://www.google1.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca47418\",\r\n    \"photo3\": \"https://www.google1.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca47418\",\r\n    \"categoria_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/pointOfInterest/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"pointOfInterest",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Errores de validación 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"location\": \"11.76423,-31.67892\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor \",\r\n    \"fechaApertura\": \"20/12/2021 17:09:44\",\r\n    \"coverPhoto\": \"photo1.png\",\r\n    \"photo2\": \"photo2.png\",\r\n    \"photo3\": \"photo3.png\",\r\n    \"categoria_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/pointOfInterest/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"pointOfInterest",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -285,7 +401,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/pointOfInterest/3",
+							"raw": "http://localhost:9000/pointOfInterest/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -293,7 +409,7 @@
 							"port": "9000",
 							"path": [
 								"pointOfInterest",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -326,7 +442,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"nuevo punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 4\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"nuevo punto de interés\",\r\n    \"location\": \"12.554,179.2132\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor \",\r\n    \"fechaApertura\": \"20/12/2021 17:09:44\",\r\n    \"coverPhoto\": \"https://www.google1.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca47418\",\r\n    \"photo2\": \"https://www.google2.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca474185188b4\",\r\n    \"photo3\": \"https://www.google3.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%%2F2017%2F11%2F11%2F5a05d2a2ca474185188b457\",\r\n    \"categoria_id\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -355,7 +471,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"EDITADO punto de interés\",\r\n    \"location\": \"12.12313,-1.12312\",\r\n    \"description\": \"Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor de la pradera mamaar por la gloria de mi madre ahorarr. \",\r\n    \"fechaApertura\": \"\",\r\n    \"coverPhoto\": \"url.png\",\r\n    \"photo2\": \"\",\r\n    \"photo3\": \"\",\r\n    \"categoria\": \r\n    {\r\n        \"id\": 5\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"punto de interés EDITADO\",\r\n    \"location\": \"2.554,19.2132\",\r\n    \"description\": \" Sexuarl qué dise usteer a wan no te digo trigo por no llamarte Rodrigor. Llevame al sircoo tiene musho peligro papaar papaar ahorarr pupita pupita. \",\r\n    \"fechaApertura\": \"18/12/2021 12:09:44\",\r\n    \"coverPhoto\": \"https://www.google1111111111111.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca47418\",\r\n    \"photo2\": \"https://www.google222222222222.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%2%2F2017%2F11%2F11%2F5a05d2a2ca474185188b4\",\r\n    \"photo3\": \"https://www.google33333333333.com/imgres?imgurl=https%3A%2F%2Fe00-elmundo.uecdn.es%2Fassets%2Fmultimedia%2Fimagenes%2F2017%2F11%2F10%2F15103273726306.jpg&imgrefurl=https%3A%2F%2Fwww.elmundo.es%2Floc%%2F2017%2F11%2F11%2F5a05d2a2ca474185188b457\",\r\n    \"categoria_id\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,7 +479,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/pointOfInterest/3",
+							"raw": "http://localhost:9000/pointOfInterest/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -371,7 +487,7 @@
 							"port": "9000",
 							"path": [
 								"pointOfInterest",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -383,7 +499,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/pointOfInterest/9",
+							"raw": "http://localhost:9000/pointOfInterest/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -391,7 +507,7 @@
 							"port": "9000",
 							"path": [
 								"pointOfInterest",
-								"9"
+								"1"
 							]
 						}
 					},
@@ -402,6 +518,80 @@
 		{
 			"name": "Route",
 			"item": [
+				{
+					"name": "Errores",
+					"item": [
+						{
+							"name": "Error al obtener una ruta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/route/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"route",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error al editar una ruta",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ruta Editada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/route/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"route",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Error al borrar una ruta",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/route/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"route",
+										"100"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
 				{
 					"name": "Obtener una ruta",
 					"request": {
@@ -443,7 +633,7 @@
 					"response": []
 				},
 				{
-					"name": "Agregar una ruta",
+					"name": "Crear una ruta",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -506,7 +696,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/route/2",
+							"raw": "http://localhost:9000/route/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -514,7 +704,7 @@
 							"port": "9000",
 							"path": [
 								"route",
-								"2"
+								"1"
 							]
 						}
 					},
